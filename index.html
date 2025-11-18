@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JNP Creates - Developer & Creator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0f1419;
+            color: #e7e9ea;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Logo */
+        .bg-logo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 1200px;
+            height: auto;
+            z-index: 0;
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .bg-logo img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 60px rgba(102, 126, 234, 0.6));
+            animation: gradient-pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes gradient-pulse {
+            0%, 100% {
+                filter: drop-shadow(0 0 60px rgba(102, 126, 234, 0.6));
+            }
+            50% {
+                filter: drop-shadow(0 0 100px rgba(255, 107, 237, 0.8));
+            }
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 3rem;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e7e9ea;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-tabs a {
+            color: #8b98a5;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-tabs a:hover,
+        .nav-tabs a.active {
+            color: #e7e9ea;
+        }
+
+        .social-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-nav a {
+            color: #8b98a5;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .social-nav a:hover {
+            color: #e7e9ea;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 2rem 6rem 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin-top: -4rem;
+        }
+
+        .hero-section h1 {
+            font-size: 6rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-section .tagline {
+            font-size: 1.8rem;
+            color: #8b98a5;
+            margin-bottom: 3rem;
+        }
+
+        .hero-social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-social-links a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Work Section */
+        .work-section {
+            padding: 4rem 0 6rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: #8b98a5;
+            font-size: 1.1rem;
+        }
+
+        /* Project Cards */
+        .project-item {
+            margin-bottom: 6rem;
+        }
+
+        .project-wrapper {
+            background: #1a1f28;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-wrapper:hover {
+            transform: translateY(-12px);
+            border-color: rgba(255,255,255,0.12);
+            box-shadow:
+                0 20px 40px rgba(0,0,0,0.4),
+                0 0 0 1px rgba(255,255,255,0.05);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            align-items: center;
+        }
+
+        .project-media-box {
+            height: 550px;
+            position: relative;
+            overflow: hidden;
+            background: #0f1419;
+        }
+
+        .project-media-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-wrapper:hover .project-media-box img {
+            transform: scale(1.08);
+        }
+
+        .project-media-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .project-details {
+            padding: 4rem;
+        }
+
+        .project-category {
+            font-size: 0.85rem;
+            color: #8b98a5;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .project-desc {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #8b98a5;
+            margin-bottom: 2.5rem;
+        }
+
+        .view-project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: #e7e9ea;
+            color: #0f1419;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .view-project-btn:hover {
+            background: #fff;
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        .footer-area {
+            padding: 6rem 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 6rem;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copy {
+            color: #8b98a5;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-left {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+
+            .social-nav {
+                flex-wrap: wrap;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-media-box {
+                height: 400px;
+            }
+
+            .hero-section h1 {
+                font-size: 3.5rem;
+            }
+
+            .project-name {
+                font-size: 2rem;
+            }
+
+            .bg-logo {
+                width: 100%;
+                max-width: 600px;
+            }
+
+            .hero-content {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Logo -->
+    <div class="bg-logo">
+        <img src="jnp-logo.png" alt="JNP Creates Logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-left">
+            <div class="logo">JNP Creates</div>
+            <div class="nav-tabs">
+                <a href="index.html" class="active">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="social-nav">
+            <a href="https://youtube.com/@jnpcreates" target="_blank">YouTube</a>
+            <a href="https://tiktok.com/@jnpcreates" target="_blank">TikTok</a>
+            <a href="https://instagram.com/jnp_creates" target="_blank">Instagram</a>
+            <a href="https://github.com/jnpcreates" target="_blank">GitHub</a>
+            <a href="https://twitter.com/jnpcreates" target="_blank">Twitter</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>JNP Creates</h1>
+                <p class="tagline">Developer • Creator • Maker</p>
+                <div class="hero-social-links">
+                    <a href="https://youtube.com/@jnpcreates" target="_blank">YouTube</a>
+                    <a href="https://tiktok.com/@jnpcreates" target="_blank">TikTok</a>
+                    <a href="https://instagram.com/jnp_creates" target="_blank">Instagram</a>
+                    <a href="https://github.com/jnpcreates" target="_blank">GitHub</a>
+                    <a href="https://twitter.com/jnpcreates" target="_blank">Twitter</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="work-section" id="work">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>A selection of my best work</p>
+            </div>
+
+            <!-- Project 1 -->
+            <article class="project-item">
+                <div class="project-wrapper">
+                    <div class="project-grid">
+                        <div class="project-media-box">
+                            <img src="project1.jpg" alt="Project 1">
+                        </div>
+                        <div class="project-details">
+                            <div class="project-category">Web Development</div>
+                            <h3 class="project-name">Modern Platform</h3>
+                            <p class="project-desc">
+                                A full-featured web application built with cutting-edge technologies.
+                                Clean architecture, responsive design, and optimized performance.
+                            </p>
+                            <a href="project1-details.html" class="view-project-btn">
+                                View Project →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-item">
+                <div class="project-wrapper">
+                    <div class="project-grid">
+                        <div class="project-media-box">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-category">Video Content</div>
+                            <h3 class="project-name">Tutorial Series</h3>
+                            <p class="project-desc">
+                                Comprehensive tutorial series covering modern web development practices,
+                                tools, and techniques for building professional applications.
+                            </p>
+                            <a href="project2-details.html" class="view-project-btn">
+                                Watch Now →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-item">
+                <div class="project-wrapper">
+                    <div class="project-grid">
+                        <div class="project-media-box">
+                            <img src="project3.jpg" alt="Project 3">
+                        </div>
+                        <div class="project-details">
+                            <div class="project-category">Design Work</div>
+                            <h3 class="project-name">Brand Experience</h3>
+                            <p class="project-desc">
+                                Complete brand identity and digital experience design. From concept
+                                to execution with focus on user-centered design principles.
+                            </p>
+                            <a href="project3-details.html" class="view-project-btn">
+                                Explore →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-copy">© 2024 JNP Creates. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
