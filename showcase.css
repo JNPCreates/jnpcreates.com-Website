@@ -51,6 +51,17 @@ a:focus-visible { outline: 3px solid #b0baff; outline-offset: 6px; }
 .project-facts dd { line-height: 1.5; margin-bottom: 1.2rem; }
 .project-facts dd:last-child { margin-bottom: 0; }
 .back-link { display: inline-block; margin-bottom: 2rem; }
+.swarm-visual { background: radial-gradient(ellipse at 50% 40%, #273e49, #151a23 75%); }
+.swarm-window { width: 100%; max-width: 410px; border: 1px solid #526078; border-radius: 10px; overflow: hidden; background: #111820; box-shadow: 0 20px 60px #0005; }
+.swarm-titlebar { display: flex; justify-content: space-between; gap: 1rem; padding: 0.9rem 1rem; background: #25303e; color: #d5dfec; font-size: 0.8rem; }
+.swarm-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: #354151; }
+.swarm-terminal { min-height: 100px; padding: 1rem; background: #111820; font-family: Consolas, monospace; font-size: 0.75rem; line-height: 1.8; }
+.swarm-terminal span { display: block; color: #b7c4d5; }
+.swarm-terminal .swarm-prompt { color: #8ddcc0; margin-top: 0.7rem; }
+.project-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; margin-top: 1.5rem; }
+.article-body .view-project-btn { color: #0f1419; text-decoration: none; }
+.article-aside .swarm-visual { padding: 1.5rem; }
+.article-aside .swarm-terminal { padding: 0.75rem; }
 .footer-area { padding: 3rem 0; margin-top: 3rem; }
 @media (max-width: 1024px) {
     .project-name { font-size: 2.2rem; }

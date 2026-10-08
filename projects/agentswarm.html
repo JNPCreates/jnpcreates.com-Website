@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentSwarm - JNP Creates</title>
+    <meta name="description" content="AgentSwarm is a VS Code extension for launching grids of agent terminals. A short look at the workflow, layout controls, and build.">
+    <link rel="canonical" href="https://jnpcreates.com/projects/agentswarm.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AgentSwarm - JNP Creates">
+    <meta property="og:description" content="AgentSwarm is a VS Code extension for launching grids of agent terminals. A short look at the workflow, layout controls, and build.">
+    <meta property="og:url" content="https://jnpcreates.com/projects/agentswarm.html">
+    <meta property="og:image" content="https://jnpcreates.com/jnp-logo.png">
+    <link rel="icon" href="../jnp-logo.png" type="image/png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../showcase.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-logo" aria-hidden="true"><img src="../jnp-logo.png" alt=""></div>
+    <nav aria-label="Main navigation">
+        <div class="nav-left">
+            <a class="logo" href="../index.html">JNP Creates</a>
+            <div class="nav-tabs">
+                <a href="../index.html">Home</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="social-nav">
+            <a href="https://youtube.com/@jnpcreates" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://tiktok.com/@jnpcreates" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="https://instagram.com/jnp_creates" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://github.com/jnpcreates" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://twitter.com/jnpcreates" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </div>
+    </nav>
+    <main class="container" id="main">
+        <header class="page-header">
+            <a class="back-link" href="../projects.html">&larr; All projects</a>
+            <p class="project-category">Developer tool &middot; 2 min read</p>
+            <h1>AgentSwarm</h1>
+            <p>Multiple terminals. One workspace. A VS Code extension that makes setting up an agent workflow a little less repetitive.</p>
+        </header>
+        <div class="article-layout">
+            <article class="article-body" aria-label="Project story">
+                <section aria-labelledby="idea-title">
+                    <h2 id="idea-title">The idea</h2>
+                    <p>Working with several command-line agents can mean opening terminals, arranging splits, and typing the same startup command repeatedly. AgentSwarm brings that setup into a dedicated VS Code sidebar: choose a layout and launch the terminals together.</p>
+                </section>
+                <section aria-labelledby="workflow-title">
+                    <h2 id="workflow-title">Choose a grid. Get to work.</h2>
+                    <p>Pick a preset such as 1 &times; 2, 2 &times; 2, or 2 &times; 4, or adjust the rows and columns yourself. Each terminal opens in the editor grid so you can keep several sessions in view.</p>
+                    <ul>
+                        <li>Launch plain shells or enable a shared startup command for each terminal.</li>
+                        <li>Use the layout for coding agents, command-line tools, or regular shell sessions.</li>
+                        <li>Close the terminals launched by AgentSwarm with one command.</li>
+                    </ul>
+                </section>
+                <section aria-labelledby="build-title">
+                    <h2 id="build-title">Behind the build</h2>
+                    <p>The extension is written in TypeScript. A sidebar provides the controls, while VS Code's extension APIs create the terminals and arrange the editor groups.</p>
+                    <p>AgentSwarm handles the terminal setup. You choose what each session works on and how to coordinate the work. Startup commands run only when you enable that option.</p>
+                </section>
+                <section aria-labelledby="source-title">
+                    <h2 id="source-title">Explore the project</h2>
+                    <p>The source and build instructions are on GitHub. You can build and package the extension locally, then install it in VS Code.</p>
+                    <div class="project-actions">
+                        <a class="view-project-btn" href="https://github.com/JNPCreates/agentswarm-vscode" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+                        <a href="https://github.com/JNPCreates/agentswarm-vscode#build-from-source" target="_blank" rel="noopener noreferrer">Build and setup instructions</a>
+                    </div>
+                </section>
+            </article>
+            <aside class="article-aside" aria-label="Project details">
+                <figure class="project-visual swarm-visual" aria-label="Illustration of a two by two terminal grid">
+    <div class="swarm-window" aria-hidden="true">
+        <div class="swarm-titlebar"><strong>AgentSwarm</strong><span>2 &times; 2</span></div>
+        <div class="swarm-grid">
+            <div class="swarm-terminal"><span>Terminal 01</span><span class="swarm-prompt">&gt; Ready_</span></div>
+            <div class="swarm-terminal"><span>Terminal 02</span><span class="swarm-prompt">&gt; Ready_</span></div>
+            <div class="swarm-terminal"><span>Terminal 03</span><span class="swarm-prompt">&gt; Ready_</span></div>
+            <div class="swarm-terminal"><span>Terminal 04</span><span class="swarm-prompt">&gt; Ready_</span></div>
+        </div>
+    </div>
+    <figcaption class="visual-caption">Terminal grid illustration &middot; 2 &times; 2 layout</figcaption>
+</figure>
+                <dl class="project-facts">
+                    <dt>Platform</dt><dd>Visual Studio Code</dd>
+                    <dt>Built with</dt><dd>TypeScript &middot; VS Code extension API</dd>
+                    <dt>Project version</dt><dd>0.0.6</dd>
+                    <dt>License</dt><dd>MIT</dd>
+                    <dt>Focus</dt><dd>Less terminal setup. More room to work.</dd>
+                </dl>
+            </aside>
+        </div>
+    </main>
+    <footer class="footer-area"><div class="container"><p class="footer-copy">&copy; 2026 JNP Creates. All rights reserved.</p></div></footer>
+</body>
+</html>
