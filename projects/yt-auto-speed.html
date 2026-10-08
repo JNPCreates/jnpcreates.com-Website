@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Auto Speed - JNP Creates</title>
+    <meta name="description" content="A lightweight Firefox extension that remembers your preferred YouTube playback speed. A short project note on the idea, features, and implementation.">
+    <link rel="canonical" href="https://jnpcreates.com/projects/yt-auto-speed.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="YT Auto Speed - JNP Creates">
+    <meta property="og:description" content="A lightweight Firefox extension that remembers your preferred YouTube playback speed. A short project note on the idea, features, and implementation.">
+    <meta property="og:url" content="https://jnpcreates.com/projects/yt-auto-speed.html">
+    <meta property="og:image" content="https://jnpcreates.com/jnp-logo.png">
+    <link rel="icon" href="../jnp-logo.png" type="image/png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../showcase.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-logo" aria-hidden="true"><img src="../jnp-logo.png" alt=""></div>
+    <nav aria-label="Main navigation">
+        <div class="nav-left">
+            <a class="logo" href="../index.html">JNP Creates</a>
+            <div class="nav-tabs">
+                <a href="../index.html">Home</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+        <div class="social-nav">
+            <a href="https://youtube.com/@jnpcreates" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://tiktok.com/@jnpcreates" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="https://instagram.com/jnp_creates" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://github.com/jnpcreates" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://twitter.com/jnpcreates" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </div>
+    </nav>
+    <main class="container" id="main">
+        <header class="page-header">
+            <a class="back-link" href="../projects.html">&larr; All projects</a>
+            <p class="project-category">Browser extension &middot; 2 min read</p>
+            <h1>YT Auto Speed</h1>
+            <p>Your videos, at your pace. A small Firefox extension built to take one repeated click out of watching YouTube.</p>
+        </header>
+        <div class="article-layout">
+            <article class="article-body" aria-label="Project story">
+                <section aria-labelledby="idea-title">
+                    <h2 id="idea-title">The idea</h2>
+                    <p>If you regularly watch videos at a different speed, adjusting the player again and again gets old. YT Auto Speed gives that preference a home: choose a speed in the extension popup and let it apply to regular YouTube videos as you browse.</p>
+                </section>
+                <section aria-labelledby="features-title">
+                    <h2 id="features-title">What it does</h2>
+                    <ul>
+                        <li>A playback-speed slider from 0.25&times; to 2.0&times;, with 1.25&times; as the default.</li>
+                        <li>An on/off toggle and preferences saved between browser sessions.</li>
+                        <li>Automatic speed adjustment when navigating between regular videos, designed to leave Shorts alone.</li>
+                    </ul>
+                </section>
+                <section aria-labelledby="build-title">
+                    <h2 id="build-title">Behind the build</h2>
+                    <p>The popup uses HTML, CSS, and JavaScript. A content script reads the saved settings and passes them to code running alongside YouTube's player.</p>
+                    <p>The interesting part is navigation: YouTube can switch videos without reloading the whole page. The extension listens for that transition, waits for the player to be ready, and applies the chosen speed through the player's playback controls.</p>
+                </section>
+                <section aria-labelledby="privacy-title">
+                    <h2 id="privacy-title">Keeping it simple</h2>
+                    <p>The extension stores its enabled state and speed preference locally in Firefox. The current code includes no analytics or external data requests; its permissions cover YouTube pages and browser storage.</p>
+                </section>
+                <section aria-labelledby="availability-title">
+                    <h2 id="availability-title">Availability</h2>
+                    <p>This page is a project showcase. A verified public installation link is not available here yet.</p>
+                </section>
+            </article>
+            <aside class="article-aside" aria-label="Project details">
+                <figure class="project-visual" aria-label="Illustration of the YT Auto Speed popup">
+    <div class="speed-popup" aria-hidden="true">
+        <div class="popup-header"><span>YT Auto Speed</span><span class="popup-toggle"></span></div>
+        <div class="popup-body">
+            <div class="popup-speed"><span>Playback speed</span><strong>1.25&times;</strong></div>
+            <div class="popup-track"></div>
+            <div class="popup-range"><span>0.25&times;</span><span>2.0&times;</span></div>
+        </div>
+    </div>
+    <figcaption class="visual-caption">A simple setting. Fewer repeat clicks.</figcaption>
+</figure>
+                <dl class="project-facts">
+                    <dt>Platform</dt><dd>Firefox &middot; YouTube</dd>
+                    <dt>Built with</dt><dd>JavaScript, HTML, CSS, WebExtensions</dd>
+                    <dt>Project version</dt><dd>1.1</dd>
+                    <dt>Focus</dt><dd>One preference, fewer repeat clicks.</dd>
+                </dl>
+            </aside>
+        </div>
+    </main>
+    <footer class="footer-area"><div class="container"><p class="footer-copy">&copy; 2026 JNP Creates. All rights reserved.</p></div></footer>
+</body>
+</html>
